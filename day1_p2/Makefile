@@ -1,8 +1,8 @@
-NAME		= cal_count
+NAME		= max3_cal_count
 
 CC			= cc
 
-CFLAGS		= -Wall -Wextra -Werror
+CFLAGS		= -Wall -Wextra -Werror -g
 
 SRC			= main.c
 
