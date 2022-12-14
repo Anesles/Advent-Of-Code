@@ -2,5 +2,6 @@
 
 int	main()
 {
-	
+	char	*line;
+	int		fd;
 }

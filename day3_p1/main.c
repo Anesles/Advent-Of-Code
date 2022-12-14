@@ -50,7 +50,12 @@ int	main()
 		c = find_common(h1, h2);
 		points += get_points(c);
 		ft_printf("Line = %s;\nH1 = %s; H2 = %s;\nPoints('%c') = %d\n\n", line, h1, h2, c, get_points(c));
+		free(h1);
+		free(h2);
+		free(line);
 		line = ft_strtrim(get_next_line(fd), "\n");
 	}
+	free(line);
+	close(fd);
 	ft_printf("Result = %d\n", points);
 }

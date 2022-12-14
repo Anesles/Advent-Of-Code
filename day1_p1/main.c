@@ -34,7 +34,10 @@ int	main(void)
 		}
 		else
 			sum += ft_atoi(line);
+		free(line);
 		line = get_next_line(fd);
 	}
+	free(line);
 	ft_printf("Max calories carried is %d calories by Elf %d\n", max[0], max[1]);
+	close(fd);
 }

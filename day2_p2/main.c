@@ -50,8 +50,11 @@ int	main(void)
 			else if (line[2] == 'Z')
 				points += (1 + 6);
 		}
+		free(line);
 		line = get_next_line(fd);
 	}
+	free(line);
 	ft_printf("Total points = %d\n", points);
+	close(fd);
 	return (0);
 }

@@ -13,8 +13,10 @@ int	get_elfs(int fd)
 	{
 		if (!ft_isdigit(line[0]))
 			n += 1;
+		free(line);
 		line = get_next_line(fd);
 	}
+	free(line);
 	return (n);
 }
 
@@ -29,10 +31,12 @@ int	get_cals(int fd)
 	{
 		line = ft_strtrim(line, "\n\t\e\r\v\f");
 		sum += ft_atoi(line);
+		free(line);
 		line = get_next_line(fd);
 		if (!line)
 			break;
 	}
+	free(line);
 	return (sum);
 }
 
@@ -81,4 +85,6 @@ int	main(void)
 	while (i < n_elfs)
 		max[i++] = get_cals(fd);
 	sort(max, n_elfs);
+	free(max);
+	close(fd);
 }

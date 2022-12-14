@@ -50,11 +50,16 @@ int	main()
 	{
 		if (!h1 || !h2 || !h3)
 			break ;
+		free(h2);
 		h2 = ft_strtrim(get_next_line(fd), "\n");
+		free(h3);
 		h3 = ft_strtrim(get_next_line(fd), "\n");
 		c = find_common(h1,h2,h3);
 		points += get_points(c);
+		free(h1);
 		h1 = ft_strtrim(get_next_line(fd), "\n");
 	}
+	free(h1);
+	close(fd);
 	ft_printf("Result = %d\n", points);
 }
